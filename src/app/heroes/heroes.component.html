@@ -1,4 +1,5 @@
 <h2>Estudantes cadastrados</h2>
+
 <ul class="heroes">
   <li *ngFor="let hero of heroes"
     [class.selected]="hero === selectedHero"
@@ -7,16 +8,4 @@
   </li>
 </ul>
 
-<div *ngIf="selectedHero">
-
-  <h2>{{selectedHero.name | uppercase}} Detalhes</h2>
-  <div><span>id: </span>{{selectedHero.id}}</div>
-  <div>
-    <label for="hero-name">Nome do estudante: </label>
-    <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
-  </div>
-  <div><span>idade: </span>{{selectedHero.idade}}</div>
-  <div><span>cidade: </span>{{selectedHero.cidade}}</div>
-  <div><span>instituicao: </span>{{selectedHero.instituicao}}</div>
-
-</div>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
